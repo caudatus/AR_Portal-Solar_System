@@ -1,6 +1,8 @@
 # AR Portal - Solar System <img src = "images/Icon.png" width = 50 align = right>
 > ARKit 을 활용한 첫 번째 앱
 
+<br/>
+
 ## About this App
 이 앱은 AR을 이용하여 우리가 살고 있는 지구를 포함한 태양계의 행성을 관찰하는 앱 입니다.
 눈 앞에 태양을 포함한 태양계의 행성들을 하나씩 불러올 수 있습니다.
@@ -19,6 +21,7 @@ Enjoy this app on a flat floor with living room, classroom, auditorium, or outdo
 <br/>
 
 ## Preview
+<img src = "images/screenshot.png">
 
 <br/>
 
