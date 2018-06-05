@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  AR Potal - Solar
+
+  Created by Seo JaeHyeong on 15/05/2018.
+  Copyright © 2018 Seo Jaehyeong. All rights reserved.
+*/
+
+"warning" = "
+*경고!*
+
+이 앱을 즐기기 위해서는
+가로막히지 않은 넓은 거실과 같은
+안전한 공간이 필요합니다.
+도로, 지붕, 발코니 등 위험요소가
+있는 곳에서는 실행하지 마세요.
+
+항상 주위를 살펴 조심하시기 바랍니다.
+";
+
+"PORTAL" = "포털 열기";
+"SUN" = "태양";
+"MERCURY" = "수성";
+"VENUS" = "금성";
+"EARTH" = "지구";
+"MARS" = "화성";
+"JUPITER" = "목성";
+"SATURN" = "토성";
+"URANUS" = "천왕성";
+"NEPTUNE" = "해왕성";
+
+"notAvailable" = "카메라 분석이 가능하지 않습니다.";
+"normal" = "평평한 바닥을 찾고 있습니다.";
+"excessiveMotion" = "카메라의 움직임이 너무 많습니다.";
+"insufficientFeatures" = "충분한 공간과 밝기를 확보하세요\n";
+"initializing" = "초기화 중..";
+"relocalizing" = "중단된 작업을 복구 중입니다.";
+"r_excessiveMotion" = "카메라의 움직임을 천천히 하거나 새로고침 해주세요.";
+"r_insufficientFeatures" = "카메라를 평평한 바닥을 향하거나 새로고침 해주세요.";
+"r_relocalizing" = "카메라를 움직이기 이전의 곳으로 돌리거나 새로고침 해주세요.";
+
+"existing" = "현재 화면에 포털이 존재하고 있습니다.";
+"find" = "포털을 위치시킬수 있는 평평한 바닥을 찾으세요.";
+"detected" = "평평한 바닥을 찾았습니다.";
+"tapto" = "바닥을 탭하거나 \"포털 열기\" 버튼을 클릭하세요";

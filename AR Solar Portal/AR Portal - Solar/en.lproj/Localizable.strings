@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  AR Potal - Solar
+
+  Created by Seo JaeHyeong on 15/05/2018.
+  Copyright © 2018 Seo Jaehyeong. All rights reserved.
+*/
+
+"warning" = "
+Warning !!
+
+In order to enjoy this app,
+You need a safe space
+such as a spacious living room.
+
+Always be careful to look around.
+";
+
+"PORTAL" = "Open Portal";
+"SUN" = "Sun";
+"MERCURY" = "Mercury";
+"VENUS" = "Venus";
+"EARTH" = "Earth";
+"MARS" = "Mars";
+"JUPITER" = "Jupiter";
+"SATURN" = "Saturn";
+"URANUS" = "Uranus";
+"NEPTUNE" = "Neptune";
+
+"notAvailable" = "TRACKING UNAVAILABLE";
+"normal" = "TRACKING NORMAL";
+"excessiveMotion" = "TRACKING LIMITED\nExcessive motion";
+"insufficientFeatures" = "TRACKING LIMITED\nLow detail";
+"initializing" = "Initializing";
+"relocalizing" = "Recovering from interruption";
+"r_excessiveMotion" = "Try slowing down your movement, or reset the session.";
+"r_insufficientFeatures" = "Try pointing at a flat surface, or reset the session.";
+"r_relocalizing" = "Return to the location where you left off or try resetting the session.";
+
+"existing" = "EXISTING PORTAL NOW !!";
+"find" = "FIND A SURFACE TO PLACE A PORTAL";
+"detected" = "SURFACE DETECTED";
+"tapto" = "TAP + TO PLACE A PORTAL";
