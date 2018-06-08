@@ -26,12 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 determine whether to show UI for launching AR experiences.
             """) // For details, see https://developer.apple.com/documentation/arkit
       }
-
+      
       return true
    }
 
    
    func applicationWillResignActive(_ application: UIApplication) {
+      
       if let viewController = self.window?.rootViewController as? MainViewController {
          viewController.blurView.isHidden = false
       }

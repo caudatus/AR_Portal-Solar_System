@@ -233,7 +233,6 @@
                                                     <constraint firstItem="Sb6-U9-GHM" firstAttribute="leading" secondItem="vbD-vQ-9S9" secondAttribute="leading" constant="16" id="Cs5-dF-X2A"/>
                                                     <constraint firstItem="Sb6-U9-GHM" firstAttribute="trailing" secondItem="vbD-vQ-9S9" secondAttribute="trailing" constant="-16" id="PIC-Ns-vaZ"/>
                                                     <constraint firstItem="Sb6-U9-GHM" firstAttribute="centerY" secondItem="vbD-vQ-9S9" secondAttribute="centerY" id="RCR-Sj-XEI"/>
-                                                    <constraint firstItem="Sb6-U9-GHM" firstAttribute="top" secondItem="vbD-vQ-9S9" secondAttribute="top" constant="8" id="dq7-6a-ZTK"/>
                                                 </constraints>
                                             </view>
                                             <vibrancyEffect>
