@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FE57046820B65FC400764FB8 /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE57046720B65FC400764FB8 /* PlanetModel.swift */; };
 		FE57046B20B8392200764FB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE57046D20B8392200764FB8 /* InfoPlist.strings */; };
+		FECA9B3E20CE344D0070E320 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECA9B3D20CE344D0070E320 /* Utilities.swift */; };
 		FEDC4BCB20ABE5F500ED3DD1 /* PlanetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC4BCA20ABE5F500ED3DD1 /* PlanetListViewController.swift */; };
 		FEDC4BCD20ABEA9800ED3DD1 /* Portal.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDC4BCC20ABEA9800ED3DD1 /* Portal.scnassets */; };
 		FEDC4BCF20ABEF3700ED3DD1 /* MainViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC4BCE20ABEF3700ED3DD1 /* MainViewController+ARSCNViewDelegate.swift */; };
@@ -29,6 +30,7 @@
 		FE57046720B65FC400764FB8 /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
 		FE57046C20B8392200764FB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FE57046E20B8392500764FB8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FECA9B3D20CE344D0070E320 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		FEDC4BCA20ABE5F500ED3DD1 /* PlanetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewController.swift; sourceTree = "<group>"; };
 		FEDC4BCC20ABEA9800ED3DD1 /* Portal.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Portal.scnassets; sourceTree = "<group>"; };
 		FEDC4BCE20ABEF3700ED3DD1 /* MainViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				FEDC4BCA20ABE5F500ED3DD1 /* PlanetListViewController.swift */,
 				FEDC4BD020ABEFB500ED3DD1 /* PlanetLoader.swift */,
 				FE57046720B65FC400764FB8 /* PlanetModel.swift */,
+				FECA9B3D20CE344D0070E320 /* Utilities.swift */,
 				FEF2261620AAA50A00E0BD54 /* Resources */,
 			);
 			path = "AR Portal - Solar";
@@ -186,6 +189,7 @@
 			files = (
 				FEDC4BD520AD495400ED3DD1 /* MainViewController+PlanetListDelegate.swift in Sources */,
 				FEDC4BCB20ABE5F500ED3DD1 /* PlanetListViewController.swift in Sources */,
+				FECA9B3E20CE344D0070E320 /* Utilities.swift in Sources */,
 				FEF2261120AAA4C600E0BD54 /* WarningViewController.swift in Sources */,
 				FEF225FF20AA7B5100E0BD54 /* AppDelegate.swift in Sources */,
 				FEDC4BD120ABEFB500ED3DD1 /* PlanetLoader.swift in Sources */,

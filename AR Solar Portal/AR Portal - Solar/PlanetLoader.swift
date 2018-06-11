@@ -15,6 +15,18 @@ class PlanetLoader {
    
    var basicPosition = SCNVector3(0, 0, -1)
    
+   enum PlanetNames: String {
+      case SUN
+      case MERCURY
+      case VENUS
+      case EARTH
+      case MARS
+      case JUPITER
+      case SATURN
+      case URANUS
+      case NEPTUNE
+      case PORTAL
+   }
    
    func planet(radius: CGFloat, diffuse: UIImage, specular: UIImage?, emission: UIImage?, normal: UIImage?, time: TimeInterval, position: SCNVector3, inclination: Int) -> SCNNode {
       
@@ -25,12 +37,6 @@ class PlanetLoader {
       planet.geometry?.firstMaterial?.normal.contents = normal
       planet.position = position
       planet.eulerAngles = SCNVector3(0, 0, inclination.degreesToRadians)
-      
-//      let lightNode = SCNNode()
-//      lightNode.light = SCNLight()
-//      lightNode.light?.color = UIColor.white // initially switched off
-//      lightNode.light?.type = .omni
-//      planet.addChildNode(lightNode)
       
       let planetRotation = rotation(time: time)
       planet.runAction(planetRotation)
@@ -77,7 +83,7 @@ class PlanetLoader {
       let planetPosition =  SCNVector3(planeXposition, 0, planeZposition)
       
       switch name {
-      case "SUN":
+      case PlanetNames.SUN.rawValue:
          return planet(radius: 0.2,
                 diffuse: UIImage(named: PLANETS.SUN.diffuse)!,
                 specular: nil,
@@ -86,7 +92,7 @@ class PlanetLoader {
                 time: 30,
                 position: planetPosition,
                 inclination: PLANETS.SUN.inclination)
-      case "MERCURY":
+      case PlanetNames.MERCURY.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.MERCURY.diffuse)!,
                        specular: nil,
@@ -95,7 +101,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.MERCURY.inclination)
-      case "VENUS":
+      case PlanetNames.VENUS.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.VENUS.diffuse)!,
                        specular: nil,
@@ -104,7 +110,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.VENUS.inclination)
-      case "EARTH":
+      case PlanetNames.EARTH.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.EARTH.diffuse)!,
                        specular: UIImage(named: PLANETS.EARTH.specular)!,
@@ -113,7 +119,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.EARTH.inclination)
-      case "MARS":
+      case PlanetNames.MARS.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.MARS.diffuse)!,
                        specular: nil,
@@ -122,7 +128,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.MARS.inclination)
-      case "JUPITER":
+      case PlanetNames.JUPITER.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.JUPITER.diffuse)!,
                        specular: nil,
@@ -131,7 +137,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.JUPITER.inclination)
-      case "SATURN":
+      case PlanetNames.SATURN.rawValue:
          return planetWithRing(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.SATURN.diffuse)!,
                        specular: nil,
@@ -140,7 +146,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.SATURN.inclination)
-      case "URANUS":
+      case PlanetNames.URANUS.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.URANUS.diffuse)!,
                        specular: nil,
@@ -149,7 +155,7 @@ class PlanetLoader {
                        time: 30,
                        position: planetPosition,
                        inclination: PLANETS.URANUS.inclination)
-      case "NEPTUNE":
+      case PlanetNames.NEPTUNE.rawValue:
          return planet(radius: 0.2,
                        diffuse: UIImage(named: PLANETS.NEPTUNE.diffuse)!,
                        specular: nil,
@@ -176,6 +182,16 @@ class PlanetLoader {
    }
    
    
+   func makeNode() -> SCNNode {
+      let basicHeight: Float = 0.8
+      
+      let node = SCNNode()
+      node.position = SCNVector3(0, basicHeight, 0)
+      
+      return node
+   }
+   
+   
    func loadPlanetSolarSystem() -> SCNNode {
       
       let basicHeight: Float = 0.8
@@ -189,40 +205,28 @@ class PlanetLoader {
       parentNode.position = SCNVector3(0, 0, -5)
       parentNode.addChildNode(sun)
       
-      let mercuryParent = SCNNode()
-      mercuryParent.position = SCNVector3(0, basicHeight, 0)
+      let mercuryParent = makeNode()
       parentNode.addChildNode(mercuryParent)
       
-      let venusParent = SCNNode()
-      venusParent.position = SCNVector3(0, basicHeight, 0)
+      let venusParent = makeNode()
       parentNode.addChildNode(venusParent)
       
-      let earthParent = SCNNode()
-      earthParent.position = SCNVector3(0, basicHeight, 0)
+      let earthParent = makeNode()
       parentNode.addChildNode(earthParent)
       
-      let moonParent = SCNNode()
-      moonParent.position = SCNVector3(1.2, basicHeight, 0)
-      earthParent.addChildNode(moonParent)
-      
-      let marsParent = SCNNode()
-      marsParent.position = SCNVector3(0, basicHeight, 0)
+      let marsParent = makeNode()
       parentNode.addChildNode(marsParent)
       
-      let jupiterParent = SCNNode()
-      jupiterParent.position = SCNVector3(0, basicHeight, 0)
+      let jupiterParent = makeNode()
       parentNode.addChildNode(jupiterParent)
       
-      let saturnParent = SCNNode()
-      saturnParent.position = SCNVector3(0, basicHeight, 0)
+      let saturnParent = makeNode()
       parentNode.addChildNode(saturnParent)
       
-      let uranusParent = SCNNode()
-      uranusParent.position = SCNVector3(0, basicHeight, 0)
+      let uranusParent = makeNode()
       parentNode.addChildNode(uranusParent)
       
-      let neptuneParent = SCNNode()
-      neptuneParent.position = SCNVector3(0, basicHeight, 0)
+      let neptuneParent = makeNode()
       parentNode.addChildNode(neptuneParent)
       
       //Planet
@@ -279,15 +283,6 @@ class PlanetLoader {
       earthOrbit.opacity = 0.4
       earthOrbit.renderingOrder = 260
       earthParent.addChildNode(earthOrbit)
-
-//      let moon = planet(radius: 0.05,
-//                        diffuse: UIImage(named: "moon")!,
-//                        specular: nil,
-//                        emission: nil,
-//                        normal: nil,
-//                        time: 0,
-//                        position: SCNVector3(0, 0, -1))
-//      moonParent.addChildNode(moon)
 
       let mars = planet(radius: CGFloat(PLANETS.MARS.radius),
                         diffuse: UIImage(named: PLANETS.MARS.diffuse)!,
@@ -382,54 +377,27 @@ class PlanetLoader {
 
       let sunRotation = rotation(time: PLANETS.SUN.rotating)
       sun.runAction(sunRotation)
-
-      //let mercuryRotation = rotation(time: PLANETS.MERCURY.rotating)
-      //mercury.runAction(mercuryRotation)
       
       let mercuryParentRotation = rotation(time: PLANETS.MERCURY.revolution)
       mercuryParent.runAction(mercuryParentRotation)
-
-      //let venusRotation = rotation(time: PLANETS.VENUS.rotating)
-      //venus.runAction(venusRotation)
       
       let venusParentRotation = rotation(time: PLANETS.VENUS.revolution)
       venusParent.runAction(venusParentRotation)
 
-      //let earthRotation = rotation(time: PLANETS.EARTH.rotating)
-      //earth.runAction(earthRotation)
-
       let earthParentRotation = rotation(time: PLANETS.EARTH.revolution)
       earthParent.runAction(earthParentRotation)
-
-//      let moonParentRotation = rotation(time: 3)
-//      moonParent.runAction(moonParentRotation)
-
-      //let marsRotation = rotation(time: PLANETS.MARS.rotating)
-      //mars.runAction(marsRotation)
       
       let marsParentRotation = rotation(time: PLANETS.MARS.revolution)
       marsParent.runAction(marsParentRotation)
-
-      //let jupiterRotation = rotation(time: PLANETS.JUPITER.rotating)
-      //jupiter.runAction(jupiterRotation)
       
       let jupiterParentRotation = rotation(time: PLANETS.JUPITER.revolution)
       jupiterParent.runAction(jupiterParentRotation)
-
-      //let saturnRotation = rotation(time: PLANETS.SATURN.rotating)
-      //saturn.runAction(saturnRotation)
       
       let saturnParentRotation = rotation(time: PLANETS.SATURN.revolution)
       saturnParent.runAction(saturnParentRotation)
-
-      //let uranusRotation = rotation(time: PLANETS.URANUS.rotating)
-      //uranus.runAction(uranusRotation)
       
       let uranusParentRotation = rotation(time: PLANETS.URANUS.revolution)
       uranusParent.runAction(uranusParentRotation)
-
-      //let neptuneRotation = rotation(time: PLANETS.NEPTUNE.rotating)
-      //neptune.runAction(neptuneRotation)
       
       let neptuneParentRotation = rotation(time: PLANETS.NEPTUNE.revolution)
       neptuneParent.runAction(neptuneParentRotation)
@@ -447,8 +415,4 @@ class PlanetLoader {
    
 }
 
-
-extension Int {
-   var degreesToRadians: Double { return Double(self) * .pi/180}
-}
 

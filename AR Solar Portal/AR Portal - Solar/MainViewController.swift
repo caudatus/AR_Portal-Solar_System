@@ -236,45 +236,49 @@ class MainViewController: UIViewController {
       let solarSystemNode = planetLoader.loadPlanetSolarSystem()
       portalNode.addChildNode(solarSystemNode)
       
-      addPlane(nodeName: "roof", portalNode: portalNode, imageName: "stars_milky_way")
-      addPlane(nodeName: "floor", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "backWall", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideWallA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideWallB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideDoorA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideDoorB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "midDoorA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "midDoorB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "portalDoor", portalNode: portalNode, imageName: "PORTAL")
+      addPlane(parentNode: portalNode)
+      addWalls(parentNode: portalNode)
       
       sceneView.scene.rootNode.addChildNode(portalNode)
    }
    
    
-   func addWalls(nodeName: String, portalNode: SCNNode, imageName: String) {
-      let child = portalNode.childNode(withName: nodeName, recursively: true)
+   func addWalls(parentNode: SCNNode) {
+      let portalWalls: [String] =
+         ["backWall", "sideWallA", "sideWallB", "sideDoorA", "sideDoorB", "midDoorA", "midDoorB", "portalDoor"]
       
-      if nodeName == "portalDoor" {
-         child?.geometry?.firstMaterial?.isDoubleSided = true
-         child?.geometry?.firstMaterial?.emission.contents = UIImage(named: "stars_milky_way")
+      for wall in portalWalls {
+         let child = parentNode.childNode(withName: wall, recursively: true)
          
-         let portalRotation = rotation(time: 5)
-         child?.runAction(portalRotation)
+         if wall == "portalDoor" {
+            child?.geometry?.firstMaterial?.isDoubleSided = true
+            child?.geometry?.firstMaterial?.emission.contents = UIImage(named: "stars_milky_way")
+            
+            let portalRotation = rotation(time: 5)
+            child?.runAction(portalRotation)
+            
+            child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "PORTAL")
+         } else {
+            child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "stars_milky_way")
+         }
+         child?.renderingOrder = 200
+         
+         if let mask = child?.childNode(withName: "mask", recursively: false) {
+            mask.geometry?.firstMaterial?.transparency = 0.000001
+         }
       }
       
-      child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "\(imageName)")
-      child?.renderingOrder = 200
-      
-      if let mask = child?.childNode(withName: "mask", recursively: false) {
-         mask.geometry?.firstMaterial?.transparency = 0.000001
-      }
    }
    
    
-   func addPlane(nodeName: String, portalNode: SCNNode, imageName: String) {
-      let child = portalNode.childNode(withName: nodeName, recursively: true)
-      child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "\(imageName)")
-      child?.renderingOrder = 200
+   func addPlane(parentNode: SCNNode) {
+      let portalPlanes: [String] = ["roof", "floor"]
+      
+      for plane in portalPlanes {
+         let child = parentNode.childNode(withName: plane, recursively: true)
+         child?.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "stars_milky_way")
+         child?.renderingOrder = 200
+      }
    }
 
    

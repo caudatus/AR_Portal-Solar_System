@@ -14,10 +14,11 @@ extension MainViewController: PlanetListViewControllerDelegate {
       
       displayObjectLoadingUI()
       
+      let portalName: String = "PORTAL"
       let name = didSelectObject
       removePlanet()
       
-      if name == "PORTAL" {
+      if name == portalName {
          //make portal
          guard let planeAnchor = currentPlaneAnchor else {return}
          
@@ -70,16 +71,8 @@ extension MainViewController: PlanetListViewControllerDelegate {
       let planeZposition = anchor.transform.columns.3.z
       portalNode.position =  SCNVector3(planeXposition, planeYposition, planeZposition)
       
-      addPlane(nodeName: "roof", portalNode: portalNode, imageName: "stars_milky_way")
-      addPlane(nodeName: "floor", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "backWall", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideWallA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideWallB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideDoorA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "sideDoorB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "midDoorA", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "midDoorB", portalNode: portalNode, imageName: "stars_milky_way")
-      addWalls(nodeName: "portalDoor", portalNode: portalNode, imageName: "PORTAL")
+      addPlane(parentNode: portalNode)
+      addWalls(parentNode: portalNode)
       
       let solarSystemNode = planetLoader.loadPlanetSolarSystem()
       portalNode.addChildNode(solarSystemNode)

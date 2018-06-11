@@ -22,7 +22,6 @@ class StatusViewController: UIViewController {
       case trackingStateEscalation
       case planeEstimation
       case contentPlacement
-      case focusSquare
       
       static var all: [MessageType] = [
          .trackingStateEscalation,
