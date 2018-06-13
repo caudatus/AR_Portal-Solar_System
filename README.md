@@ -2,7 +2,7 @@
 > ARKit 을 활용한 첫 번째 앱
 
 <a href="https://itunes.apple.com/kr/app/ar-portal-태양계/id1391499424?l=ko&ls=1&mt=8"><img src = "images/App_Store_Badge_KR.png" width="130"></a>
-<a href="https://itunes.apple.com/us/app/ar-portal-solar-system/id1391499424?l=us&ls=1&mt=8"><img src = "images/App_Store_Badge_US.png" width="130"></a>
+<a href="https://itunes.apple.com/us/app/ar-portal-solar-system/id1391499424?l=us&ls=1&mt=8"><img src = "images/App_Store_Badge_US.png" width="120"></a>
 
 <br/>
 
