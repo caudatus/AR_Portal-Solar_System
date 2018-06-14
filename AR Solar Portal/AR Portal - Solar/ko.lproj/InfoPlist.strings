@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  AR Potal - Solar
+
+  Created by Seo JaeHyeong on 25/05/2018.
+  Copyright © 2018 Seo Jaehyeong. All rights reserved.
+*/
+"NSCameraUsageDescription" = "멋진 AR 환경을 위해 카메라 사용이 필요합니다.";
