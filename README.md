@@ -34,5 +34,4 @@ Enjoy this app on a flat floor with living room, classroom, auditorium, or outdo
 <br/>
 
 ## Contact Info
-- **:iphone:** +82 10 5270 0109
 - **:email:** jaehyeongee@gmail.com
